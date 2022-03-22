@@ -24,8 +24,7 @@ public class Homework {
         int second = 512;
         if (first + second >= 0) {
             System.out.println("Сумма положительна");
-        }
-        else {
+        } else {
             System.out.println("The sum is negative");
         }
     }
@@ -40,8 +39,9 @@ public class Homework {
             System.out.println("Red");
         } else if (value <= 100) {
             System.out.println("Yellow");
-        } else if (value == 666) return;
-        else {
+        } else if (value == 666) {
+            return;
+        } else {
             System.out.println("Green");
         }
 //        int q = value == 10 ? 100500 : 0;
@@ -49,10 +49,15 @@ public class Homework {
     }
 
     public static String printColor(int value) {
-        if (value <= 0) return "Red";
-        else if (value <= 100) return "Yellow";
-        return "Green";
+        if (value <= 0) {
+            return "Red";
+        } else if (value <= 100) {
+            return "Yellow";
+        }
 
+        return "Green";
+        //... Дальше код не выполнится никогда
+//        System.out.println("kjdfnvbjdfnbjfd");
     }
 
     public static void compareNumbers() {
@@ -61,13 +66,16 @@ public class Homework {
         //условие        что будет       что будет в
         //если true       противном случае
         System.out.println(first >= second ? "a >= b" : "a < b");
-//        if (first >= second)
+//        if (first >= second) {
 //            System.out.println("a >= b");
-//        else
+//        }
+//        else {
 //            System.out.println("a < b");
+//        }
     }
 
-    public static void compareNumbers(int first, int second) {
-        System.out.println(first >= second ? "a >= b" : "a < b");
+    public static String compareNumbers(int first, int second) {
+//        System.out.println(first >= second ? "a >= b" : "a < b");
+        return first >= second ? "a >= b" : "a < b";
     }
 }

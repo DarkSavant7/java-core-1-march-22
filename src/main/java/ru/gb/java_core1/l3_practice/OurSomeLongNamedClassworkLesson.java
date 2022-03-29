@@ -2,7 +2,7 @@ package ru.gb.java_core1.l3_practice;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.*;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class OurSomeLongNamedClassworkLesson {
 //        guessGame();
 //        scannerReadFileExample();
 
-//        arrays2dExample();
+        arrays2dExample();
 
     }
 
@@ -34,9 +34,15 @@ public class OurSomeLongNamedClassworkLesson {
 //        System.out.println(Arrays.deepToString(arr));
 
         int[][] arr2 = new int[3][];
-        arr2[0] = new int[10];
-        arr2[1] = new int[5];
-        arr2[2] = new int[14];
+//        arr2[0] = new int[10];
+//        arr2[1] = new int[5];
+//        arr2[2] = new int[14];
+
+        System.out.println(Arrays.toString(arr2));
+//        System.out.println(arr2);
+//        for (int i = 0; i < arr2.length; i++) {
+//            System.out.println(arr2[i]);
+//        }
 
         int[][] arr3 = {
                 {1, 2, 3, 4},
@@ -44,9 +50,12 @@ public class OurSomeLongNamedClassworkLesson {
                 {1, 2, 3, 4, 324, 243, 564},
                 {1, 2, 3, 4}
         };
-        print2dArray(arr3);
+//        print2dArray(arr3);
+
+//        System.out.println(Arrays.toString(arr2));
 
         int[][][][][][][][][][] superArr = new int[10][10][][][][][][][][];
+
     }
 
     public static void print2dArray(int[][] arr) {

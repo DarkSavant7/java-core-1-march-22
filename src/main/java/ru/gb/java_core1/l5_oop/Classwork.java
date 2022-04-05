@@ -50,7 +50,10 @@ public class Classwork {
 
         System.out.println(cat4.type);
         System.out.println(cat3.type);
-
+        
+        Cat[] cats = new Cat[10];
+        cats[0] = cat4;
+        cats[1] = new Cat("xfd", "", 12);
     }
 
 }

@@ -14,6 +14,27 @@ public class Classwork {
 //        enumsExample();
 //        innerClasses();
 
+        Cat[] cats = {
+                new Cat("Barsik", 10),
+                new Cat("Murzik", 14),
+                new Cat("Murka", 8),
+                new Cat("Vaska", 11),
+                new Cat("Tom", 25)
+        };
+
+        Bowl bowl = new Bowl();
+        bowl.putFood(40);
+
+        for (Cat cat : cats) {
+            cat.eat(bowl);
+        }
+
+        System.out.println(bowl);
+
+        for (Cat cat : cats) {
+            System.out.println(cat);
+        }
+
 
     }
 

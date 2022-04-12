@@ -8,11 +8,22 @@ public class Bowl {
         System.out.printf("Food increased by %d pts, there is now %d\n", amount, foodAmount);
     }
 
-    public void decreaseFood(int amount) {
+    public boolean decreaseFood(int amount) {
+        if (amount > this.foodAmount) {
+            return false;
+        }
         this.foodAmount -= amount;
+        return true;
     }
 
     public int getFoodAmount() {
         return foodAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "Bowl{" +
+                "foodAmount=" + foodAmount +
+                '}';
     }
 }

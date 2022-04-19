@@ -47,7 +47,9 @@ public class GameMap extends JPanel {
              return;
          }
 
-         if (!playerTurn(e)) {
+        int dot = gameMode == MODE_VS_AI ? DOT_HUMAN : playerNumTurn == 1 ? DOT_HUMAN : DOT_AI;
+
+         if (!playerTurn(e, dot)) {
              return;
          }
 
@@ -55,23 +57,23 @@ public class GameMap extends JPanel {
              return;
          }
 
-         aiTurn();
-         repaint();
-
-        if (gameCheck(DOT_AI, STATE_WIN_AI)) {
-            return;
+        if (gameMode == MODE_VS_AI) {
+            aiTurn();
+            repaint();
+            if (gameCheck(DOT_AI, STATE_WIN_AI)) return;
         }
     }
 
-    private boolean playerTurn(MouseEvent event) {
+    private boolean playerTurn(MouseEvent event, int dot) {
         int cellX = event.getX() / cellWidth;
         int cellY = event.getY() / cellHeight;
 
         if (!isCellValid(cellY, cellX) || !isCellEmpty(cellY, cellX)) {
             return false;
         }
-        field[cellY][cellX] = DOT_HUMAN;
+        field[cellY][cellX] = dot;
         repaint();
+        playerNumTurn = playerNumTurn == 1 ? 2 : 1;
         return true;
     }
 
@@ -135,6 +137,7 @@ public class GameMap extends JPanel {
         fieldSizeX = fieldSize;
         fieldSizeY = fieldSize;
         this.winLength = winLength;
+        this.playerNumTurn = 1;
         field = new int[fieldSizeY][fieldSizeX];
         isGameOver = false;
         isInitialized = true;
